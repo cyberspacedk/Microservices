@@ -9,8 +9,8 @@ const PostList = () => {
 
     useEffect(()=> {
         (async ()=> {
-            try {
-             const {data} = await axios('//localhost:4000/posts');
+            try { 
+             const {data} = await axios('//localhost:4002/posts'); 
              setPosts(data)
             } catch (error) {
                 console.log('Err', error)
@@ -26,7 +26,7 @@ const PostList = () => {
                 style={{width: '30%', margin:'10px 20px'}}
             >
                 <h3 className="p-3">{post.title}</h3>
-                <CommentList postId={post.id}/>
+                <CommentList comments={post.comments}/>
                 <CommentCreate postId={post.id}/>
             </div>
         )
