@@ -19,6 +19,7 @@ app.post('/posts', async (req, res)=> {
     const title = req.body.title;
     posts[id] = {id, title};
 
+    //Emit new event PostCreated
     try {
         await axios.post('http://localhost:4005/events', {
             type: 'PostCreated',
@@ -34,7 +35,7 @@ app.post('/posts', async (req, res)=> {
 
 // Get event from event-bus
 app.post('/event', (req, res)=> {
-    console.log('POSTS MS HAS RECEIVED EVENT: ', req.body.type);
+    console.log('POSTS MS GOT EVENT: ', req.body.type);
 
     res.send({})
 })

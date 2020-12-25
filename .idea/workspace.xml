@@ -2,22 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf0d613b-89a9-497a-bdb2-6cab43b80294" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event-bus/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event-bus/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event-bus/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/query/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/query/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/query/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/CommentList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/CommentList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/PostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/PostList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moderation/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comments/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/comments/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-bus/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/event-bus/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/posts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/posts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/query/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/query/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +19,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1m6ItgU1RjaW30W5966NYHWjCdO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -42,6 +35,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -53,7 +47,8 @@
       <option name="presentableId" value="Default" />
       <updated>1608807831037</updated>
       <workItem from="1608807833094" duration="819000" />
-      <workItem from="1608808903501" duration="463000" />
+      <workItem from="1608808903501" duration="581000" />
+      <workItem from="1608885884089" duration="6055000" />
     </task>
     <servers />
   </component>

@@ -3,7 +3,8 @@ const {randomBytes} = require('crypto');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
-const postedComments = {};
+
+const commentsDB = {};
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -11,26 +12,29 @@ app.use(bodyParser.json());
 
 app.get('/posts/:id/comments', (req, res)=> {
     const postId = req.params.id;
-    res.send(postedComments[postId] || [])
+    res.send(commentsDB[postId] || [])
 });
 
+//when new comment will be created
 app.post('/posts/:id/comments', async (req, res)=> {
     const postId = req.params.id;
     const id = randomBytes(4).toString('hex');
     const content = req.body.content;
 
-    const foundComments = postedComments[postId] || [];
-    foundComments.push({id, content})
+    const foundComments = commentsDB[postId] || [];
+    foundComments.push({id, content, status: 'pending'})
 
-    postedComments[postId] = foundComments;
+    commentsDB[postId] = foundComments;
 
+    //Emit new event to Event-bus
     try {
         await axios.post('http://localhost:4005/events', {
             type: 'CommentCreated',
             payload: {
                 id,
                 content,
-                postId
+                postId,
+                status: 'pending'
             }
         });
     } catch (error) {
@@ -41,11 +45,27 @@ app.post('/posts/:id/comments', async (req, res)=> {
 });
 
 // Get event from event-bus
-app.post('/events', (req, res)=> {
-    console.log('COMMENTS MS HAS RECEIVED EVENT: ', req.body.type);
+app.post('/events', async(req, res)=> {
+    const {type, payload} = req.body;
+
+    console.log('COMMENTS MS GOT EVENT: ', req.body.type);
+
+    const {postId, id, status } = payload;
+
+    if(type === 'CommentModerated'){
+        commentsDB[postId] = commentsDB[postId].map(comment => (comment.id === id ? {...comment, status}: comment) );
+
+        //Emit new event CommentUpdated and send to event-bus
+        await axios.post('http://localhost:4005/events', {
+            type: 'CommentUpdated',
+            payload
+        });
+    }
+
+
 
     res.send({})
-})
+});
 
 app.listen(4001, ()=> {
     console.log('Server starts on 4001 port')
